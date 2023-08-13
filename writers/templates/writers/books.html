@@ -14,42 +14,17 @@
                     </select>
                 </div>
             <div class="home-menu-book">
-                <a class="home-menu-itens-book">
-                    <div class="itens-img-book">
-                        <img src="../templates/images/books/ahoradaestrela.jpeg" alt="books-img">
-                    </div>
-                    <div class="itens-text-book">
-                        <h1><strong>A HORA DA ESTRELA</strong></h1>
-                        <h2><strong>AUTHOR(A):</strong>Clarisse Lispector</h2>
-                    </div>
-                </a>
-                <a class="home-menu-itens-book">
-                    <div class="itens-img-book">
-                        <img src="../templates/images/books/doncasmurro.jpeg" alt="poems-img">
-                    </div>
-                    <div class="itens-text-book">
-                        <h1><strong>DOM CASMURRO</strong></h1>
-                        <h2><strong>AUTHOR(A):</strong>Machado de Assis</h2>
-                    </div>
-                </a>
-                <a href="../pages/authors.html" class="home-menu-itens-book">
-                    <div class="itens-img-book">
-                        <img src="../templates/images/books/ocortico.jpeg" alt="authors-img">
-                    </div>
-                    <div class="itens-text-book">
-                        <h1><strong>O CORTIÇO</strong></h1>
-                        <h2><strong>AUTHOR(A):</strong>Aluísio Azevedo</h2>
-                    </div>
-                </a>
-                <a href="../pages/authors.html" class="home-menu-itens-book">
-                    <div class="itens-img-book">
-                        <img src="../templates/images/books/memorias.jpeg" alt="authors-img">
-                    </div>
-                    <div class="itens-text-book">
-                        <h1><strong>MEMÓRIAS PÓSTUMAS DE BRÁS CUBAS</strong></h1>
-                        <h2><strong>AUTHOR(A):</strong>Machado de Assis</h2>
-                    </div>
-                </a>
+                {% for book in books %}
+                    <a class="home-menu-itens-book">
+                        <div class="itens-img-book">
+                            <img src="{{book.image.url}}" alt="books-img">
+                        </div>
+                        <div class="itens-text-book">
+                            <h1><strong>{{book.title}}</strong></h1>
+                            <h2><strong>AUTHOR(A):</strong>{{book.author}}</h2>
+                        </div>
+                    </a>
+                {% endfor %}
             </div>
         </div>
     </main>
