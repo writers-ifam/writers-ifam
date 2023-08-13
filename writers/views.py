@@ -5,7 +5,7 @@ def index(request):
     return render(request, 'writers/index.html', {'page_title': 'Writers!'})
 
 def authors(request):
-    authors = Author.objects.all()
+    authors = Author.objects.all().filter(is_published=True)
     return render(request, 'writers/authors.html', {'page_title': 'Authors!','authors': authors,})
 
 def author_detail(request, id):

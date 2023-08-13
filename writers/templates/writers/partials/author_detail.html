@@ -30,8 +30,9 @@
                              </ul>
                             </div>
                             <div class="itens-img-authors">
-                                <img src="{{author.image.url}}" alt="books-img">
-                            </div>
+                                {% if author.image %}
+                                <img src="{{author.image.url}}">
+                                {% endif %}                            </div>
                        </div>
                     </div>
                 </div>
