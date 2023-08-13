@@ -4,34 +4,33 @@
     <main class="main">
         {% include 'writers/partials/header.html' %}
         <div class="main-author">
-            <h2>Carlos Dummond de Andrade</h2>
+            <h2>{{author.name}}</h2>
         </div>
             <div class="main-home-author">
                 <div class="home-menu-authors'">
                     <div class="menu-authors">
                         <div class="info">
                             <div class="itens-info-about">                   
-                                <h3 class="itens-author-who">Quem foi Calos Drummond de Andrade?</h3>
-                                <p class="itens-author-about">Carlos Drummond de Andrade foi um poete, farmacêutico, contista e cronista brasileiro, considerado por muitos o mais influente poeta brasileiro do século XX.</p>
+                                <h3 class="itens-author-who">Quem foi {{author.name}}?</h3>
+                                <p class="itens-author-about">{{author.bio}}</p>
                             </div>
                             <div class="itens-info-death">                   
                                 <h3 class="itens-author-who">Morte</h3>
-                                <p class="itens-author-about">Morreu no dia 17 de agosto de 1987, no Rio de Janeiro, aos 84 anos, apenas 12 dias depois da morte de sua única filha Maria Julieta Drummond de Andrade.</p>
+                                <p class="itens-author-about">{{author.death}}</p>
                             </div>
                         </div>
                         
                        <div class="poems">
-                            
                             <div class="main-poems">
                                 <h3>Poemas</h3>
                                 <ul>
-                                    <li>Congresso Internacional do Medo</li>
-                                    <li>Assnhamento</li>
-                                    <li>Sentimental</li>
-                                </ul>
+                                {% for poem in poems %} 
+                                    <li>{{poem.title}}</li>
+                                {% endfor %}
+                             </ul>
                             </div>
                             <div class="itens-img-authors">
-                                <img src="" alt="books-img">
+                                <img src="{{author.image.url}}" alt="books-img">
                             </div>
                        </div>
                     </div>
@@ -39,5 +38,4 @@
             </div>       
     </main>
 </body>
-<script src="{% static 'writers/js/main.js' %}"></script>
 </html>

@@ -1,13 +1,13 @@
 {% load static %}
 <header>
-    <div class="header-left">
+    <a href="{% url 'writers:index' %}" class="header-left">
         <div class="header-logo">
             <img src="{% static 'writers/images/header-logo.png' %}" alt="header-logo">
         </div>
         <h1 class="header-text">
             WRITERS
         </h1>
-    </div>
+    </a>
     <a href="pages/login.html" class="header-profile-img">
         <img src="{% static 'writers/images/profile-img.png' %}" alt="profile-img">
     </a>
