@@ -1,27 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Writers.blog</title>
-    <link rel="stylesheet" href="../templates/css/styles.css">
-    <script src="../templates/js/main.js"></script>
-</head>
+{% include 'writers/partials/head.html' %}
 <body>
-    <main class="main">
-        <header>
-            <div onclick="main()" class="header-left">
-                <div class="header-logo">
-                    <img src="../templates/images/header-logo.png" alt="header-logo">
-                </div>
-                <h1 class="header-text">
-                    WRITERS
-                </h1>
-            </div>
-            <a href="../pages/login.html" class="header-profile-img">
-                <img src="../templates/images/profile-img.png" alt="profile-img">
-            </a>
-        </header>
+    {% include 'writers/partials/header.html' %}
         <div class="main-author">
             <h2>Livros</h2>
         </div>
