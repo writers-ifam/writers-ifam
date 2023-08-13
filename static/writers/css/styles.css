@@ -1,0 +1,517 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--colorSecondary);
+    font-family: 'Times New Roman', Times, serif;
+}
+:root{
+    --colorPrimary: #E2B9FF;
+    --colorSecondary: #7D2089;
+    --colorHover: #7d20898d;
+    --colorHoverWhite:#f0f0f0;
+    --colorWhite: #FFF;
+    --colorWhiteLow: #F1F1F0;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+    background-color: var(--colorPrimary);
+}
+body{
+    background-color: var(--colorWhiteLow);
+}
+.header-left{
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none !important;
+    min-width: 100px;
+    max-width: 200px;
+}
+.header-logo{
+    width: 50px;
+    height: 50px;
+}
+.header-logo > img{
+    width: 100%;
+    height: 100%;
+}
+.header-text{
+    color: var(--colorSecondary);
+}
+
+.header-profile-img{
+    width: 45px;
+    height: 45px;
+}
+.header-profile-img > img{
+    width: 100%;
+    height: 100%;
+}
+
+.main-home{
+    margin: 10px auto;
+    padding: 10px 120px;
+
+    min-width: 240px;
+    max-width: 800px;
+
+}
+
+.home-search{
+    display: block;
+    margin: auto;
+    padding: 10px 22px 0px 20px;
+    min-width: 200px;
+    max-width: 600px;
+}
+#home-searchbar{
+    border: 3px solid var(--colorPrimary);
+    border-radius: 3px;
+    display: block;
+    margin: auto;
+    padding: 6px 15px;
+    height: 65px;
+    width: 100%;
+}
+#home-searchbar::-webkit-input-placeholder{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: var(--colorSecondary);
+}
+
+#home-searchbar:focus{
+    outline: none;
+}
+
+@media (max-width: 780px) {
+    .main-home{
+        padding: 10px !important;
+    }
+    .home-menu{
+        display: block !important;
+        min-width: 350px !important;
+        max-width: 700px !important;
+    }
+    .home-menu-itens{
+        display: block !important;
+        margin: 14px auto !important;
+    }
+    
+}
+
+.home-menu{
+    margin: auto;
+    min-width: 350px;
+    max-width: 940px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px,1fr));
+    gap: 20px 0px;
+    justify-content: center;
+}
+.home-menu-itens{
+    background-color: var(--colorWhite);
+    width: 260px;
+    height: 200px;
+    
+    text-decoration: none;
+    border: 4px solid var(--colorPrimary);
+}
+.home-menu-itens:hover{
+    border: 4px solid var(--colorHover);
+    background-color: var(--colorHoverWhite);
+}
+.itens-img{
+    margin-left: 20%;
+    position: relative;
+    bottom: 10px;
+    width: 160px;
+    height: 160px;
+}
+.itens-img img{
+    width: 100%;
+    height: 100%;
+}
+.itens-text{
+    position: relative;
+    bottom: 10px;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* LOGIN */
+@media (max-width: 780px) {
+    .main-home-login{
+        padding: 10px !important;
+    }
+    .home-menu-login{
+        display: block !important;
+        min-width: 350px !important;
+        max-width: 700px !important;
+    }
+}
+.main-home-login{
+    margin: 10px auto;
+    padding: 10px 120px;
+
+    min-width: 240px;
+    max-width: 800px;
+    background-color: var(--colorWhiteLow);
+}
+.main-login{
+    background-color: var(--colorWhiteLow);
+}
+.login{
+    background-color: var(--colorWhiteLow);
+}
+.home-menu-login{
+    margin: auto;
+    min-width: 350px;
+    max-width: 940px;
+    justify-content: center;
+}
+
+.login-container {
+    font-family: Arial, Helvetica, sans-serif !important;
+    border-radius: 25px;
+    background-color: var(--colorWhite);
+    padding: 20px 20px 40px 20px;
+  }
+  .login-text{
+    padding: 25px 0;
+    text-align: center;
+    margin: auto;
+  }
+  .login-text > h1{
+    margin-bottom: 25px;
+  }
+.login-text > h1, .login-text p{
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+  
+  .input-wrapper {
+    margin-bottom: 10px;
+  }
+  
+  .input-wrapper label {
+    font-family: Arial, Helvetica, sans-serif !important;
+
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .input-wrapper input[type="text"],
+  .input-wrapper input[type="email"],
+  .input-wrapper input[type="password"] {
+    border: 0;
+    width: 100%;
+    padding: 20px 20px;
+    background-color: #B0B0B0;
+    border-radius: 18px;
+  }
+  
+  .login-button {
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: larger;
+    background-color: var(--colorSecondary);
+    color: #ffffff;
+    padding: 17px 20px;
+    border: 0;
+    border-radius: 10px;
+    width: 100%;
+  }
+  .login-button:hover{
+    background-color: var(--colorPrimary);
+  }
+  
+  
+
+/* AUTHORS */
+
+
+
+@media only screen and (max-width: 580px) {
+    .itens-img-authors{
+        width: 110px !important;
+        height: 110px !important; 
+    }
+}
+@media only screen and (max-width: 400px) {
+    .itens-img-authors{
+        width: 65px !important;
+        height: 65px !important; 
+    }
+    .itens-info{
+        width: 200px;
+    }
+    .itens-info > h2{
+        font-size: medium;
+    }
+    .itens-info > p{
+        font-size: small;
+    }
+    .itens-info > a{
+        font-size: small;
+    }
+
+    
+}
+.home-menu-itens-authors{
+    border: 3px solid var(--colorPrimary);
+    background-color: var(--colorWhite);
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    align-items: center !important;
+    justify-content: space-around;
+}
+.home-menu-itens-authors > .itens-img-authors {
+    float: left !important;
+    margin: 0px 5px 0px 0px !important;
+}
+.itens-info {
+    text-decoration: none;
+    font-weight: bolder;
+}
+.itens-info > a{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.itens-img-authors{
+    width: 160px;
+    height: 160px;
+}
+.itens-img-authors img{
+    width: 90%;
+    height: 100%;
+}
+
+
+/* AUTHORS_DETAILS */
+.main-home-author{
+    margin: 10px auto;
+    padding: 10px 120px;
+
+    min-width: 240px;
+    max-width: 1100px;
+
+}
+.main-author{
+    background-color: var(--colorWhite);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    padding: 10px 20px;
+    min-width: 200px;
+    max-width: 600px;
+    border: 3px solid var(--colorPrimary);
+    border-radius: 3px;
+    height: 65px;
+    
+}
+.main-authorar::-webkit-input-placeholder{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: var(--colorSecondary);
+}
+
+.menu-authors{
+    border: 3px solid var(--colorPrimary);
+    padding: 15px;
+    display: flex;
+    align-items: center !important;
+    justify-content: space-between;
+    font-weight: lighter;
+}
+.info{
+    width: 440px;
+    height: 100%;
+    padding-right: 20px;
+    border-right: 3px solid var(--colorPrimary);
+}
+.info > div{
+    height: 155px;
+    margin-bottom: 30px;
+}
+.itens-author-about{
+    padding: 5px;
+    line-height: 22px;
+}
+.itens-author-who{
+    background-color: var(--colorPrimary);
+    padding: 10px;
+    text-align: center;
+}
+.poems{
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 360px;
+    height: 100%;
+}
+.main-poems > ul{
+    padding-left: 10px;
+}
+
+@media (max-width: 949px){
+    .menu-authors{
+        display: block !important;
+        align-items: center !important;
+       
+    }
+    .info{
+        width: 100% !important;
+        height: 100% !important;
+        margin: auto !important;
+        padding: 0px !important;
+        border: none !important;
+    }
+    .itens-author-who{
+        background-color: var(--colorPrimary);
+        padding: 10px;
+        text-align: center;
+    }
+    .poems{
+        padding-left: 10px;
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 100%;
+    }
+
+    .main-poems > ul{
+        padding-left: 10px;
+    }
+}
+@media (max-width: 627px){
+    .main-home-author{
+        padding: 10px 0px !important;
+    }
+    .main-author > h2{
+        font-size: large !important;
+    }
+    .main-author{
+        padding: 0px !important;
+    }
+   
+    .info > div > h3{
+       font-size: medium !important;
+       padding: 4px !important;
+    }
+    .info > div > p{
+        font-size: medium !important;
+        padding: 4px !important;
+    }
+    .main-poems > h3, .main-poems > ul > li{
+        font-size: medium !important;
+    }
+}
+
+
+/* BOOKS */
+.home-book-filter{
+    min-width: 200px;
+    max-width: 600px;
+    padding: 10px;
+    margin: 0px auto 10px auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--colorWhite);
+    border: 1px solid var(--colorPrimary);
+}
+
+
+.home-menu-itens-book{
+    position: relative;
+    margin: auto;
+    display: block;
+    background-color: var(--colorWhite);
+    width: 210px;
+    height: 270px;
+    text-decoration: none;
+    border: 1px solid var(--colorPrimary);
+}
+.home-menu-itens-book:hover{
+    border: 2px solid var(--colorHover);
+    background-color: var(--colorHoverWhite);
+}
+.itens-img-book{
+    padding: 10px;
+    width: 100%;
+    height: 80%;
+}
+.itens-img-book img{
+    width: 100%;
+    height: 100%;
+}
+.home-menu-book{
+    min-width: 350px;
+    max-width: 940px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    justify-content: space-evenly;
+    align-items: start; /* Alinha os itens ao topo */
+    justify-items: center;
+}
+.itens-text-book{
+    
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 55px;
+    text-align: center;
+}
+.itens-text-book > h1, .itens-text-book > h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: black;
+}
+.itens-text-book > h1{
+    font-size: medium;
+}
+.itens-text-book > h2{
+    font-size: small;
+}
+.itens-text-book strong{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}   
+
+
+@media (max-width: 780px) {
+    .home-menu-book{
+        margin: auto;
+
+        min-width: 350px !important;
+        max-width: 500px !important;
+    }
+}
+
+@media (max-width: 442px) {
+    .home-book-filter{
+        width: 100% !important;
+    }
+    .home-book-filter > h3{
+        font-size: small;
+        width: 100% !important;
+    }
+    .home-menu-book{
+        margin: auto;
+        display: block !important;
+        min-width: 230px !important;
+        max-width: 300px !important;
+    }
+    .home-menu-itens-book{
+        margin: 10px auto;
+    }
+}

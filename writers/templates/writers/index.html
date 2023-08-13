@@ -1,0 +1,39 @@
+{% load static %}
+{% include 'writers/partials/head.html' %}
+<body>
+    <main class="main">
+        {% include 'writers/partials/header.html' %}
+        <form class="home-search" action="">
+            <input type="search" name="home-searchbar" id="home-searchbar" placeholder="PESQUISAR">
+        </form>
+        <div class="main-home">
+            <div class="home-menu">
+                <a href="pages/books.html" class="home-menu-itens">
+                    <div  class="itens-img">
+                        <img src="{% static "writers/images/books-img.png"%}" alt="books-img">
+                    </div>
+                    <p class="itens-text">
+                        LIVROS
+                    </p>
+                </a>
+                <a class="home-menu-itens">
+                    <div class="itens-img">
+                        <img src="{% static "writers/images/poems-img.png"%}" alt="poems-img">
+                    </div>
+                    <p class="itens-text">
+                        POEMAS
+                    </p>
+                </a>
+                <a href="pages/authors.html" class="home-menu-itens">
+                    <div class="itens-img">
+                        <img src="{% static "writers/images/authors-img2.png" %}" alt="authors-img">
+                    </div>
+                    <p class="itens-text">
+                        AUTORES
+                    </p>
+                </a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
