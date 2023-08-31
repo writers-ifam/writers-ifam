@@ -231,7 +231,44 @@ body{
     background-color: var(--colorPrimary);
   }
   
-  
+
+footer{
+    background-color: var(--colorPrimary);
+
+}
+footer h1{
+    text-align: center;
+    font-size: x-large;
+}
+.footer-area{
+    min-width: 180px;
+    max-width: 700px;
+    margin: auto;
+
+}
+.footer-logo{
+    margin: auto;
+    min-width: none;
+    max-width: 200px;
+}
+.footer-menu, .footer-logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.footer-menu-item{
+    text-decoration: none;
+    display: flex;
+    font-weight: 500;
+    justify-content: space-evenly;
+}
+.footer-menu-item h1{
+    font-weight: 500;
+    font-size: larger;
+}
+.footer-menu-item img{
+    width: 21px;
+}
 
 /* AUTHORS */
 

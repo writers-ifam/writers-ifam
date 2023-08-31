@@ -64,7 +64,7 @@ WSGI_APPLICATION = "website.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-"""
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
@@ -78,11 +78,11 @@ DATABASES = {
         'NAME': 'writersblog',
         'USER': 'writersblog',
         'PASSWORD': '04082023',
-        'HOST': 'db4free.net',  # Ou o endereço do servidor MySQL
-        'PORT': '3306',       # A porta padrão do MySQL
+        'HOST': 'db4free.net',
+        'PORT': '3306',    
     }
 }
-
+"""
 
 
 # Password validation

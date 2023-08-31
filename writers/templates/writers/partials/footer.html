@@ -1,0 +1,37 @@
+{% load static %}
+{% load i18n %}
+
+<footer>
+    <div class="footer-area">
+        <div class="footer-logo">
+            <div class="header-logo">
+                <img src="{% static 'writers/images/header-logo.png' %}" alt="header-logo">
+            </div>
+            <h1 class="header-text">
+                WRITERS
+            </h1>
+        </div>
+        <div class="footer-text">
+            <h1>Colecione e compartilhe frases de poemas e livros</h1>
+        </div>
+        <div class="footer-menu">
+            <a href="{% url 'writers:index' %}" class="footer-menu-item">
+                <h1>Inicio</h1>
+            </a>
+            <a href="{% url 'writers:index' %}" class="footer-menu-item">
+                <h1>Livros</h1>
+            </a>
+            <a href="{% url 'writers:index' %}" class="footer-menu-item">
+                <h1>Poemas</h1>
+            </a>
+            <a href="{% url 'writers:index' %}" class="footer-menu-item">
+                <h1>Autores</h1>
+            </a>
+            <a href="{% url 'writers:index' %}" class="footer-menu-item">
+                <h1>Autores</h1>
+                <img src="{% static 'writers/images/icons/instagram.svg' %}" alt="">
+            </a>
+        </div>
+        <h1 class="footer-copyright">©2023</h1>
+    </div>
+</footer>
