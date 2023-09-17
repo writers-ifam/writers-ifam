@@ -1,0 +1,47 @@
+{% load static %}
+{% load i18n %}
+<div id="sidebar-off" onclick="sair()"></div>
+
+<div id="sidebar">
+    <div class="sidebar-user">
+        <div class="user-img">
+            {% if user.is_authenticated and user.image  %}
+            <img src="" alt="">
+            {% else %}
+            <img src="{% static 'writers/images/default_user_img.png' %}" alt="">
+            {% endif %}
+        </div>
+        {% if user.is_authenticated %}
+        <h3 class="user-name">{{ user.username|title }}</h3>
+        {% else %}
+        <h3 class="user-name">{% trans "Usuário não cadastrado!" %}</h3>
+        {% endif %}
+        
+    </div>
+    {% if user.is_authenticated %}
+        <a class="sidebar-block" href=""> {% trans "PERFIL" %}</a>
+        <a class="sidebar-block sidebar-block-bottom" href="{% url 'account_logout'  %}">{% trans "SAIR" %}</a>
+    {% else %}
+        <a class="sidebar-block" href="{% url 'account_login'  %}">{% trans "ENTRAR" %}</a>
+        <a class="sidebar-block" href="{% url 'account_signup'  %}">{% trans "REGISTRAR" %}</a>
+        
+    {% endif %}
+    <h3>Site</h3>
+    <div class="sidebar-site-options block-options">
+        <a class="sidebar-block sidebar-site-option" href="{% url 'writers:books'  %}">{% trans "LIVROS" %}</a>
+        <a class="sidebar-block sidebar-site-option" href="">{% trans "POEMAS" %}</a>
+        <a class="sidebar-block sidebar-site-option" href="{% url 'writers:authors'  %}">{% trans "AUTORES" %}</a>
+
+        {% if 'en/' in request.path  %}
+        <a class="sidebar-block sidebar-site-option">PORTUGUÊS</a>
+        {% else %}
+        <a class="sidebar-block sidebar-site-option"  href="">ENGLISH</a>
+        {% endif %}
+
+        <a class="sidebar-block sidebar-site-option" href="">{% trans "FAVORITOS" %}</a>
+        <a class="sidebar-block sidebar-site-option" href="">{% trans "QUEM SOMOS" %}</a>
+    </div>
+</div>
+    
+    
+    

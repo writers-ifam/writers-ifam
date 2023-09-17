@@ -1,0 +1,25 @@
+{% load static %}
+{% load i18n %}
+
+
+<link rel="stylesheet" href="{% static '/writers/css/auth.css' %}">
+<link rel="stylesheet" href="{% static '/writers/css/styles.css' %}">
+<title>{% block head_title %}{% endblock %}</title>
+
+
+{% load i18n %}
+{% load static %}
+{% load crispy_forms_tags %}
+    {% block body %}
+      {% include '../writers/partials/header.html' %}
+
+    {% block content %}
+
+    
+    {% endblock %}
+   
+    {% endblock %}
+    {% block extra_body %}
+    
+    {% endblock %}
+

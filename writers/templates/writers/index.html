@@ -10,7 +10,7 @@
             <div class="home-menu">
                 <a href="{% url 'writers:books' %}" class="home-menu-itens">
                     <div  class="itens-img">
-                        <img src="{% static "writers/images/books-img.png"%}" alt="books-img">
+                        <img src="{% static 'writers/images/books-img.png' %}" alt="books-img">
                     </div>
                     <p class="itens-text">
                         LIVROS
@@ -18,7 +18,7 @@
                 </a>
                 <a class="home-menu-itens">
                     <div class="itens-img">
-                        <img src="{% static "writers/images/poems-img.png"%}" alt="poems-img">
+                        <img src="{% static 'writers/images/poems-img.png' %}" alt="poems-img">
                     </div>
                     <p class="itens-text">
                         POEMAS
@@ -26,7 +26,7 @@
                 </a>
                 <a href="{% url 'writers:authors' %}" class="home-menu-itens">
                     <div class="itens-img">
-                        <img src="{% static "writers/images/authors-img2.png" %}" alt="authors-img">
+                        <img src="{% static 'writers/images/authors-img2.png' %}" alt="authors-img">
                     </div>
                     <p class="itens-text">
                         AUTORES
@@ -34,7 +34,7 @@
                 </a>
                 <a href="" class="home-menu-itens">
                     <div class="itens-img">
-                        <img src="{% static "writers/images/favorite.svg" %}" alt="authors-img">
+                        <img src="{% static 'writers/images/favorite.svg' %}" alt="authors-img">
                     </div>
                     <p class="itens-text">
                         FAVORITOS
@@ -44,5 +44,6 @@
         </div>
     </main>
     {% include 'writers/partials/footer.html' %}
+   
 </body>
 </html>

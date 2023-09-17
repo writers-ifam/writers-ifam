@@ -15,7 +15,7 @@
                 </div>
             <div class="home-menu-book">
                 {% for book in books %}
-                    <a class="home-menu-itens-book">
+                    <a href="{% url 'writers:book_detail' book.id %}" class="home-menu-itens-book">
                         <div class="itens-img-book">
                             <img src="{{book.image.url}}" alt="books-img">
                         </div>

@@ -1,0 +1,74 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'writers/partials/head.html' %}
+    <title>Quem somos</title>
+</head>
+<body class="body-team">
+    {% include 'writers/partials/header.html' %}
+    <section class="teammates">
+        <div class="teams">
+            <div class="team">
+                <div class="team-img">
+                    <img src="{% static 'writers/images/team/laura.svg' %}" alt="laura">
+                </div>
+                <div class="team-text">
+                    <h1>LAURA MACIENTE</h1>
+                    <h2>Designer e CEO</h2>
+                </div>
+            </div>
+            <div class="team">
+                <div class="team-img">
+                    <img src="{% static 'writers/images/team/guilherme.svg' %}" alt="guilherme">
+                </div>
+                <div class="team-text">
+                    <h1>LUIS GUILHERME</h1>
+                    <h2>Tradutor</h2>
+                </div>
+            </div>
+            <div class="team">
+                <div class="team-img">
+                    <img src="{% static 'writers/images/team/joao.svg' %}" alt="joao">
+                </div>
+                <div class="team-text">
+                    <h1>JOÃO PAULO</h1>
+                    <h2>Pesquisador e Tradutor</h2>
+                </div>
+            </div>
+        </div>
+        <div class="teams">
+            <div class="team">
+                <div class="team-img">
+                    <img src="{% static 'writers/images/team/ingrid.svg' %}" alt="ingrid">
+                </div>
+                <div class="team-text">
+                    <h1>INGRID SOARES</h1>
+                    <h2>Pesquisadora e Designer</h2>
+                </div>
+            </div>
+            <div class="team">
+                <div class="team-img">
+                    <img src="{% static 'writers/images/team/beatriz.svg' %}" alt="beatriz">
+                </div>
+                <div class="team-text">
+                    <h1>BEATRIZ SENA</h1>
+                    <h2>Pesquisadora e Designer</h2>
+                </div>
+            </div>
+            <div class="team">
+                <div class="team-img">
+                    <img src="{% static 'writers/images/team/maria.svg' %}" alt="maria">
+                </div>
+                <div class="team-text">
+                    <h1>MARIA CLARA</h1>
+                    <h2>Pesquisadora e Designer</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

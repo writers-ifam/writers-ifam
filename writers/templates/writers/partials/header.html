@@ -1,4 +1,6 @@
 {% load static %}
+<script src="{% static 'writers/js/sidebar.js' %}"></script>
+{% include 'writers/partials/sidebar.html' %}
 <header>
     <a href="{% url 'writers:index' %}" class="header-left">
         <div class="header-logo">
@@ -8,7 +10,7 @@
             WRITERS
         </h1>
     </a>
-    <a href="/admin/" class="header-profile-img">
-        <img src="{% static 'writers/images/profile-img.png' %}" alt="profile-img">
-    </a>
+    <div class="header-profile-img">
+        <img src="{% static 'writers/images/profile-img.png' %}" alt="menu-btn" id="home-linkstyle-menu" onclick="entrar()">
+    </div>
 </header>
