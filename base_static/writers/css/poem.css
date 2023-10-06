@@ -1,0 +1,56 @@
+
+
+.session-poem-bg {
+    background-color: #E2B9FF;
+    padding: 5px 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.poem-title {
+    color: #7D2089;
+    font-size: 34px;
+    margin-top: 40px; /* Espaçamento aumentado */
+    font-family: Arial;
+}
+
+.poem-text {
+    color: #943E9F;
+    margin-top: 40px; /* Espaçamento aumentado */
+    font-family: Arial;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.anti-link{
+    color: #7D2089 !important;
+    text-decoration: none;
+}
+.anti-link:hover{
+    color: #7D2089 !important;
+}
+.poem-btn {
+    background-color: #E2B9FF;
+    border-radius: 20px;
+    border: none;
+    color: #7D2089;
+    margin-top: 40px; /* Espaçamento aumentado */
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: Arial;
+}
+
+.poem-btn:hover {
+    background-color: #D0A1E8;
+}
+
+.img-fluid{
+    width: 200px !important;
+}
+@media (max-width: 767px) {
+    .img-fluid {
+        margin-top: 60px; /* Aplica uma margem superior à imagem em dispositivos pequenos */
+    }
+}
+

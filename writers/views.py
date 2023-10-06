@@ -1,5 +1,5 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Author, Book
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import Author, Book, Poem
 
 
 def index(request):
@@ -36,3 +36,54 @@ def book_detail(request, id):
     {'page_title': 'book_detail!',
      'book': book,
      })
+
+def poems(request):
+    last_poem = Poem.objects.last()
+    poem = Poem.objects.all().exclude(id=last_poem.id)
+    return render(request, 'writers/poems.html', {'page_title': 'Poems!',
+     'poems': poem,
+     'last_poem': last_poem,
+     })
+    
+    
+    
+
+def poem_detail(request, id):
+   
+        
+    poem = get_object_or_404(
+        Poem,
+        id=id,
+    )
+    
+    saved = False
+    if poem.users.filter(id=request.user.id).exists():
+        saved = True
+    else:
+        saved = False
+    
+    return render(request, 'writers/poem.html', 
+    {'page_title': poem.title,
+     'poem': poem,
+     'saved': saved,
+     })
+    
+def save_poems(request, id):
+    poem = get_object_or_404(Poem, id=id)
+    poem.save(request.user)
+    
+    return redirect('writers:poems')
+
+def unsave_poems(request, id):
+    poem = get_object_or_404(Poem, id=id)
+    poem.unsave(request.user)
+    
+    return redirect('writers:poems')
+
+
+def poems_saved(request):
+    poems = Poem.objects.filter(users=request.user)
+    return render(request, 'writers/saved.html',{
+        'page_title': "Favoritos",
+        'poems': poems,
+    })

@@ -16,7 +16,7 @@
                         LIVROS
                     </p>
                 </a>
-                <a class="home-menu-itens">
+                <a href="{% url 'writers:poems' %}" class="home-menu-itens">
                     <div class="itens-img">
                         <img src="{% static 'writers/images/poems-img.png' %}" alt="poems-img">
                     </div>
@@ -32,7 +32,7 @@
                         AUTORES
                     </p>
                 </a>
-                <a href="" class="home-menu-itens">
+                <a href="{% url "writers:poems_saved" %}" class="home-menu-itens">
                     <div class="itens-img">
                         <img src="{% static 'writers/images/favorite.svg' %}" alt="authors-img">
                     </div>

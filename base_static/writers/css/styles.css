@@ -860,3 +860,54 @@ footer h1{
     width: 100%;
 }
 
+/* poems */
+.poems-list{
+    margin: 15px auto;
+    width: 800px;
+}
+
+.last-main-text{
+    padding: 10px 24px ;
+    background-color: #E2B9FF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+.last-poem{
+    
+    margin: 20px auto;
+    width: 400px;
+    
+}
+.last-poem-title{
+    padding: 0 15px;
+}
+.last-poem-content {
+    padding: 10px 15px;
+    background-color: #F2E8F8;
+}
+
+.last-poem-content > h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 15px;
+}
+.poem-detail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.poem-detail > a{
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    padding: 10px 20px;
+    margin: auto;
+    text-align: center;
+    border-radius: 14px;
+    background-color: #E2B9FF;
+}
+
+

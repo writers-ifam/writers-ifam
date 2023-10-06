@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poemas</title>
+</head>
+{% include 'writers/partials/head.html' %}
+<body>
+    {% include 'writers/partials/header.html' %}
+    <section class="poems-list">
+        <div class="other-poems">
+            <h2 class="last-main-text">Poemas Favoritos</h2>
+            {% for poem in poems %}
+            <div class="last-poem">
+                <div class="last-poem-title">
+                    <h1>{{poem.title}}</h1>
+                </div>
+                <div class="last-poem-content">
+                    <h2>{{ poem.mini_description|linebreaksbr }}</h2>
+                    <div class="poem-detail">
+                        <a href="{% url 'writers:poem_detail' poem.id %}">Ler mais</a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="last-poem">
+                <div class="last-poem-title">
+                    <h1>Você ainda não tem poemas salvos</h1>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </section>
+</body>
+</html>

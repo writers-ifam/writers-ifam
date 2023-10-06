@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sessão Poema</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'writers/css/poem.css' %}">
+</head>
+
+{% include 'writers/partials/head.html' %}
+<body>
+    
+    {% include 'writers/partials/header.html' %}
+    
+    
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-5 me-lg-7">
+                <a href="{% url "writers:poems" %}" class="session-poem-bg anti-link">Voltar</a>
+                <div class="session-poem-bg">Sessão Poema</div>
+
+                {% if saved %}
+                <a href="{% url "writers:unsave_poems" poem.id %}" class="session-poem-bg anti-link">Desfavoritar</a>
+                {% else %}
+                <a href="{% url "writers:save_poems" poem.id %}" class="session-poem-bg anti-link">Favoritar</a>
+                {% endif %}
+                
+
+            
+
+                <div class="poem-title">{{poem.title}} - {{poem.author.name}}</div>
+
+                <div class="poem-text">
+                    {{poem.text|linebreaksbr}}
+                </div>
+                
+            </div>
+    
+            <!-- Lado direito: Imagem -->
+            <div class="author-img"> <!-- Margem superior adicionada para dispositivos móveis -->
+                {% if poem.author.image %}
+                <img src="{{poem.author.image.url}}" alt="Imagem descritiva" class="img-fluid">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</html>
