@@ -32,12 +32,6 @@
         <a class="sidebar-block sidebar-site-option" href="">{% trans "POEMAS" %}</a>
         <a class="sidebar-block sidebar-site-option" href="{% url 'writers:authors'  %}">{% trans "AUTORES" %}</a>
 
-        {% if 'en/' in request.path  %}
-        <a class="sidebar-block sidebar-site-option">PORTUGUÊS</a>
-        {% else %}
-        <a class="sidebar-block sidebar-site-option"  href="">ENGLISH</a>
-        {% endif %}
-
         <a class="sidebar-block sidebar-site-option" href="">{% trans "FAVORITOS" %}</a>
         <a class="sidebar-block sidebar-site-option" href="{% url 'writers:team'  %}">{% trans "QUEM SOMOS" %}</a>
     </div>
