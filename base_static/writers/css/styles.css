@@ -918,9 +918,20 @@ footer h1{
 }
 
 /* poems */
+
+.poem-size{
+    min-width: 120px;
+    max-width: 500px;
+}
+.poem-size-100{
+    width: 100%;
+
+}
+
 .poems-list{
     margin: 15px auto;
-    width: 800px;
+    min-width: 100px;
+    max-width: 800px;
 }
 
 .last-main-text{
@@ -934,7 +945,8 @@ footer h1{
 .last-poem{
     
     margin: 20px auto;
-    width: 400px;
+    min-width: 100px;
+    max-width: 400px;
     
 }
 .last-poem-title{
