@@ -2,7 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Author, Book, Poem
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy, reverse
-
+from django.db.models import Q
+from django.core.paginator import Paginator
 
 def index(request):
     return render(request, 'writers/index.html', {'page_title': 'Writers!'})
@@ -14,15 +15,32 @@ def login(request):
 
 
 def authors(request):
-    authors = Author.objects.all().filter(is_published=True)
-    return render(request, 'writers/authors.html', {'page_title': 'Authors!','authors': authors,})
+    page_title = 'Authors!'
+    authors = Author.objects.all().filter(is_published=True, is_dead=True, is_poem_author=True)
+    if request.method == "POST":
+        search = request.POST.get('home-searchbar')
+        if len(search) > 0:    
+            authors = Author.objects.all().filter(
+                Q(name__icontains=search) |
+                Q(death__icontains=search) | 
+                Q(bio__icontains=search), is_published=True, is_dead=True, is_poem_author=True)
+    
+    paginator = Paginator(authors, 15)
+    page_number = request.GET.get("page")
+    authors = paginator.get_page(page_number)
+
+    return render(request, 'writers/authors.html', {'page_title': page_title,'authors': authors,})
 
 def author_detail(request, id):
     author = Author.objects.get(id=id)
-    return render(request, 'writers/partials/author_detail.html', {'author': author,})
+    poems_by_author = Poem.objects.filter(author=author)[:3]
+    return render(request, 'writers/partials/author_detail.html', {'author': author,'poems_by_author': poems_by_author})
 
 def books(request):
     books = Book.objects.all()
+    paginator = Paginator(books, 8)
+    page_number = request.GET.get("page")
+    books = paginator.get_page(page_number)
     return render(request, 'writers/books.html', {'page_title': 'Book!','books':books,})
 
 def team(request):
@@ -35,7 +53,7 @@ def book_detail(request, id):
         id=id,
     )
     return render(request, 'writers/book_detail.html', 
-    {'page_title': 'book_detail!',
+    {'page_title': book.title.title() + ' - Writers',
      'book': book,
      })
 
@@ -50,9 +68,7 @@ def poems(request):
     
     
 
-def poem_detail(request, id):
-   
-        
+def poem_detail(request, id): 
     poem = get_object_or_404(
         Poem,
         id=id,
@@ -87,7 +103,9 @@ def unsave_poems(request, id):
 @login_required(login_url=reverse_lazy('account_login'))
 def poems_saved(request):
     poems = Poem.objects.filter(users=request.user)
+
     return render(request, 'writers/saved.html',{
         'page_title': "Favoritos",
         'poems': poems,
+        'is_saved': True,
     })

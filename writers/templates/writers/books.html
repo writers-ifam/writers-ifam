@@ -6,28 +6,40 @@
             <h2>Livros</h2>
         </div>
             <div class="main-home">
-                <div class="home-book-filter">
-                    <h3>Catálogo de Literatura</h3>
-                    <select name="book-filter" id="book-filter">
-                        <option value="" desable selected hidden >Ordenar por:</option>
-                        <option value="1">Machado de Assis</option>
-                    </select>
+                <div class="home-menu-book">
+                    {% for book in books %}
+                        <a href="{% url 'writers:book_detail' book.id %}" class="home-menu-itens-book">
+                            <div class="itens-img-book">
+                                <img src="{{book.image.url}}" alt="books-img">
+                            </div>
+                            <div class="itens-text-book">
+                                <h1><strong>{{book.title}}</strong></h1>
+                                <h2><strong>AUTHOR(A):</strong>{{book.author}}</h2>
+                            </div>
+                        </a>
+                    {% endfor %}
                 </div>
-            <div class="home-menu-book">
-                {% for book in books %}
-                    <a href="{% url 'writers:book_detail' book.id %}" class="home-menu-itens-book">
-                        <div class="itens-img-book">
-                            <img src="{{book.image.url}}" alt="books-img">
-                        </div>
-                        <div class="itens-text-book">
-                            <h1><strong>{{book.title}}</strong></h1>
-                            <h2><strong>AUTHOR(A):</strong>{{book.author}}</h2>
-                        </div>
-                    </a>
-                {% endfor %}
+            </div>
+            <div class="page-navigation">
+                <div>
+                <span class="current">
+                    Página {{ books.number }} de {{ books.paginator.num_pages }}.
+                </span>
+                <div class="pagination-button">
+                    {% if books.has_previous %}
+                        <a href="?page=1">Primeira Página</a>
+                        <a href="?page={{ books.previous_page_number }}">&le; Anterior</a>
+                    {% endif %}
+                    
+                    {% if books.has_next %}
+                        <a class="pagination-next" href="?page={{ books.next_page_number }}"> Próximo &ge;</a>
+                        <a class="pagination-back" href="?page={{ books.paginator.num_pages }}">Ultima Página</a>
+                    {% endif %}    
+                </div>             
             </div>
         </div>
     </main>
     {% include 'writers/partials/footer.html' %}
 </body>
+
 </html>

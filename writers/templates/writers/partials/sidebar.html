@@ -29,10 +29,10 @@
     <h3>Site</h3>
     <div class="sidebar-site-options block-options">
         <a class="sidebar-block sidebar-site-option" href="{% url 'writers:books'  %}">{% trans "LIVROS" %}</a>
-        <a class="sidebar-block sidebar-site-option" href="">{% trans "POEMAS" %}</a>
+        <a class="sidebar-block sidebar-site-option" href="{% url 'writers:poems'  %}">{% trans "POEMAS" %}</a>
         <a class="sidebar-block sidebar-site-option" href="{% url 'writers:authors'  %}">{% trans "AUTORES" %}</a>
 
-        <a class="sidebar-block sidebar-site-option" href="">{% trans "FAVORITOS" %}</a>
+        <a class="sidebar-block sidebar-site-option" href="{% url "writers:poems_saved" %}">{% trans "FAVORITOS" %}</a>
         <a class="sidebar-block sidebar-site-option" href="{% url 'writers:team'  %}">{% trans "QUEM SOMOS" %}</a>
     </div>
 </div>

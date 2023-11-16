@@ -4,11 +4,15 @@ from django.contrib.auth.models import User
 class Author(models.Model):
     name = models.CharField(max_length=90)
     image = models.ImageField(upload_to='author/cover/%Y/%m/%d/', blank=True, default="")
-    is_published = models.BooleanField(default=True)
-    bio = models.CharField(max_length=200)
-    death = models.CharField(max_length=200)
+    bio = models.CharField(max_length=300)
+    death = models.CharField(max_length=300)
     date_birth = models.DateField(blank=False)
     date_death = models.DateField(blank=True, default=None)
+    is_dead = models.BooleanField(default=False)
+    is_poem_author = models.BooleanField(default=False)
+    is_book_author = models.BooleanField(default=False)
+    is_published = models.BooleanField(default=True)
+    
     
     def __str__(self):
         return self.name
@@ -19,7 +23,7 @@ class Book(models.Model):
     number_of_pages = models.PositiveIntegerField(default=0)
     synopsis = models.TextField(default='')
     download = models.URLField()
-    image = models.ImageField(upload_to='books/cover/%Y/%m/%d/', blank=True, default="")
+    image = models.ImageField(upload_to='books/cover/%Y/%m/%d/')
     is_published = models.BooleanField(default=True)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     
@@ -36,7 +40,6 @@ class Poem(models.Model):
     users = models.ManyToManyField(User, related_name='saved_poems', blank=True)
     saved = models.BooleanField(default=False)
 
-
     def save(self, user):
         if user not in self.users.all():
             self.users.add(user)
@@ -46,6 +49,7 @@ class Poem(models.Model):
             self.users.remove(user)
             self.saved = False
         super().save()
+
         
     def unsave(self, user):
         self.users.remove(user)

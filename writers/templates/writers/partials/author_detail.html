@@ -24,10 +24,12 @@
                             <div class="main-poems">
                                 <h3>Poemas</h3>
                                 <ul>
-                                {% for poem in poems %} 
-                                    <li>{{poem.title}}</li>
-                                {% endfor %}
-                             </ul>
+                                    {% for poem in poems_by_author %} 
+                                    <li>
+                                        <a class="text-decoration-none" href="{% url "writers:poem_detail" poem.id %}">{{poem.title}}</a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
                             </div>
                             <div class="itens-img-authors">
                                 {% if author.image %}

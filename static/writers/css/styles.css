@@ -13,6 +13,26 @@
     --colorWhite: #FFF;
     --colorWhiteLow: #F1F1F0;
 }
+
+.page-navigation {
+    font-size: large;
+
+    text-align: center;
+    width: 100%;
+    padding: 10px 20px;
+    margin: auto;
+}
+.pagination-button {
+    padding: 10px 0px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 100%;
+}
+.pagination-button a {
+    text-decoration: none;
+
+}
 header{
     display: flex;
     justify-content: space-between;
@@ -101,6 +121,26 @@ body{
     .home-menu-itens{
         display: block !important;
         margin: 14px auto !important;
+    }
+    
+}
+@media (max-width: 380px) {
+    .main-home{
+        padding: 10px !important;
+    }
+    .home-menu{
+        display: block !important;
+        min-width: 150px !important;
+        max-width: 700px !important;
+    }
+    .home-menu-itens{
+        width: 200px !important;
+        height: 200px  !important;
+        display: block !important;
+        margin: 14px auto !important;
+    }
+    .itens-img{
+        margin-left: 10% !important;
     }
     
 }
@@ -282,7 +322,12 @@ footer h1{
 
 /* AUTHORS */
 
-
+.d-block{
+    display: block;
+    min-width: 150px !important;
+    max-width: none !important;
+    width: 100%  !important;
+}
 
 @media only screen and (max-width: 580px) {
     .itens-img-authors{
@@ -315,6 +360,7 @@ footer h1{
     background-color: var(--colorWhite);
     width: 100%;
     padding: 15px;
+    margin: 10px auto;
     display: flex;
     align-items: center !important;
     justify-content: space-around;
@@ -332,8 +378,8 @@ footer h1{
     cursor: pointer;
 }
 .itens-img-authors{
-    width: 160px;
-    height: 160px;
+    width: 170px;
+    height: 215px;
 }
 .itens-img-authors img{
     width: 90%;
@@ -342,6 +388,10 @@ footer h1{
 
 
 /* AUTHORS_DETAILS */
+.text-decoration-none{
+    text-decoration: none;
+}
+
 .main-home-author{
     margin: 10px auto;
     padding: 10px 120px;
@@ -483,7 +533,7 @@ footer h1{
     display: block;
     background-color: var(--colorWhite);
     width: 210px;
-    height: 270px;
+    height: 300px;
     text-decoration: none;
     border: 1px solid var(--colorPrimary);
 }
@@ -813,6 +863,7 @@ footer h1{
     min-width: 280px;
     max-width: 1000px;
     margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
 
 }
 .book-img{
@@ -822,6 +873,7 @@ footer h1{
     width: 100%;
 }
 .book-info{
+    font-family: Arial, Helvetica, sans-serif;
     margin: auto;
     display: flex;
     justify-content: space-evenly;
@@ -829,23 +881,28 @@ footer h1{
     width: 76%;
 }
 .book-text-info > h1{
+    font-family: Arial, Helvetica, sans-serif;
     color: black !important;
     font-weight: 500;
     font-size: 26px;
 }
 .book-text-info > h1 > b{
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 27px;
     color: black !important;
 }
 .book-info2{
+    font-family: Arial, Helvetica, sans-serif;
     margin: auto;
     width: 76%;
 }
 .book-synopsis > p{
+    font-family: Arial, Helvetica, sans-serif;
     color: black !important;
     font-size: 22px ;
 }
 .book-link{
+    
     display: flex;
     justify-content: center;
     align-items: center;

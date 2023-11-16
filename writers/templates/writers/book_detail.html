@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% include 'writers/partials/head.html' %}
-    <title>Livro - {{page_title}}</title>
 </head>
 <body>
     {% include 'writers/partials/header.html' %}
@@ -16,7 +15,7 @@
                 <img src="{{book.image.url}}" alt="book-img">
             </div>
             <div class="book-text-info">
-                <h1><b>Título:</b> {{book.title}}</h1>
+                <h1><b>Título:</b> {{book.title|title}}</h1>
                 <h1><b>Autor:</b> {{book.author.name}}</h1>
                 <h1><b>N° de Páginas:</b> {{book.number_of_pages}}</h1>
                 <h1><b>Tipo:</b> Livro Digital</h1>
@@ -27,7 +26,7 @@
             <div class="book-synopsis">
                 <p>{{book.synopsis}}</p>
             </div>
-            <a class="book-link" href="{{book.link}}" target="_blank">
+            <a class="book-link" href="{{book.download}}" target="_blank">
                 <img src="{% static "writers/images/download-button.svg" %}" alt="download">
             </a>
         </div>

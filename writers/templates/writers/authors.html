@@ -2,11 +2,12 @@
 <body>
     <main class="main">
        {% include 'writers/partials/header.html' %}
-        <form class="home-search" action="">
+        <form class="home-search" action="{% url "writers:authors" %}" method="POST">
+            {% csrf_token %}
             <input type="search" name="home-searchbar" id="home-searchbar" placeholder="PESQUISAR">
         </form>
             <div class="main-home">
-                <div class="home-menu">
+                <div class="home-menu d-block">
                     {% for author in authors %}
                         <div class="home-menu-itens-authors">
                                 <div class="itens-img-authors">
@@ -21,6 +22,22 @@
                                 </div>
                         </div>
                     {% endfor %}
+                </div>
+                <div class="page-navigation">
+                    <div>
+                    <span class="current">
+                        Página {{ authors.number }} de {{ authors.paginator.num_pages }}.
+                    </span>
+                    <div class="pagination-button">
+                    {% if authors.has_previous %}
+                        <a href="?page=1">Primeira Página</a>
+                        <a href="?page={{ authors.previous_page_number }}">&le; Anterior</a>
+                    {% endif %}
+                       
+                    {% if authors.has_next %}
+                        <a class="pagination-next" href="?page={{ authors.next_page_number }}"> Próximo &ge;</a>
+                        <a class="pagination-back" href="?page={{ authors.paginator.num_pages }}">Ultima Página</a>
+                    {% endif %}                 
                 </div>
             </div>       
     </main>
