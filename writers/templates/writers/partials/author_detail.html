@@ -21,6 +21,7 @@
                         </div>
                         
                        <div class="poems">
+                        {% if poems_by_author %}
                             <div class="main-poems">
                                 <h3>Poemas</h3>
                                 <ul>
@@ -31,6 +32,7 @@
                                     {% endfor %}
                                 </ul>
                             </div>
+                        {% endif %}
                             <div class="itens-img-authors">
                                 {% if author.image %}
                                 <img src="{{author.image.url}}">
